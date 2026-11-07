@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was created by ACADEMIC version of SMILE -->
+<smile version="1.0" id="Unnamed" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="ID0">
+			<state id="State0" />
+			<state id="State1" />
+			<state id="State2" />
+			<probabilities>0.1 0.3 0.6</probabilities>
+		</cpt>
+		<cpt id="ID1">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="ID2">
+			<state id="State0" />
+			<state id="State1" />
+			<state id="State2" />
+			<parents>ID0</parents>
+			<probabilities>0.1 0.2 0.7 0.2 0.3 0.5 0.3 0.4 0.3</probabilities>
+		</cpt>
+		<cpt id="ID3">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>ID1</parents>
+			<probabilities>0.1 0.9 0.7 0.3</probabilities>
+		</cpt>
+		<cpt id="ID4">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>ID2 ID3</parents>
+			<probabilities>0.1 0.9 0.2 0.8 0.3 0.7 0.4 0.6 0.5 0.5 0.6 0.4</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="SMILE_ACADEMIC 2.3.2@e971faba194e" name="Unnamed">
+			<node id="ID0">
+				<name>A</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>50 50 170 110</position>
+			</node>
+			<node id="ID1">
+				<name>B</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>220 50 340 110</position>
+			</node>
+			<node id="ID2">
+				<name>C</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>50 190 170 250</position>
+			</node>
+			<node id="ID3">
+				<name>D</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>220 190 340 250</position>
+			</node>
+			<node id="ID4">
+				<name>E</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>50 330 170 390</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>

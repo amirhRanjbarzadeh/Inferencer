@@ -1,0 +1,63 @@
+D:\Apps\Anaconda\envs\ReliablityProject\python.exe D:\University\Master\1403-2\IntSys\project\my_code\models\gatv2_model.py 
+Using device: cpu
+
+Model Architecture:
+GATv2_Advanced_Net(
+  (gat_layers): ModuleList(
+    (0): GATv2Conv(4, 64, heads=8)
+    (1-2): 2 x GATv2Conv(512, 64, heads=8)
+  )
+  (norms): ModuleList(
+    (0-2): 3 x LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+  )
+  (res_projection1): Linear(in_features=4, out_features=512, bias=True)
+  (final_classifier): Sequential(
+    (0): Linear(in_features=512, out_features=64, bias=True)
+    (1): LeakyReLU(negative_slope=0.01)
+    (2): Dropout(p=0.6, inplace=False)
+    (3): Linear(in_features=64, out_features=4, bias=True)
+  )
+)
+
+Starting training for 150 epochs...
+Epoch: 001, Train Loss: 0.0810, Val Loss: 0.0464, Val Cosine: 0.9668 | Pearson Correlation: 0.5394
+Epoch: 010, Train Loss: 0.0344, Val Loss: 0.0327, Val Cosine: 0.9779 | Pearson Correlation: 0.5774
+Epoch: 020, Train Loss: 0.0212, Val Loss: 0.0206, Val Cosine: 0.9847 | Pearson Correlation: 0.5698
+Epoch: 030, Train Loss: 0.0140, Val Loss: 0.0190, Val Cosine: 0.9852 | Pearson Correlation: 0.5677
+Epoch: 040, Train Loss: 0.0125, Val Loss: 0.0179, Val Cosine: 0.9861 | Pearson Correlation: 0.6039
+Epoch: 050, Train Loss: 0.0114, Val Loss: 0.0162, Val Cosine: 0.9875 | Pearson Correlation: 0.6098
+Epoch: 060, Train Loss: 0.0111, Val Loss: 0.0150, Val Cosine: 0.9884 | Pearson Correlation: 0.6128
+Epoch: 070, Train Loss: 0.0107, Val Loss: 0.0144, Val Cosine: 0.9889 | Pearson Correlation: 0.6161
+Epoch: 080, Train Loss: 0.0105, Val Loss: 0.0140, Val Cosine: 0.9892 | Pearson Correlation: 0.6098
+Epoch: 090, Train Loss: 0.0104, Val Loss: 0.0138, Val Cosine: 0.9894 | Pearson Correlation: 0.6183
+Epoch: 100, Train Loss: 0.0099, Val Loss: 0.0143, Val Cosine: 0.9891 | Pearson Correlation: 0.6171
+Epoch: 110, Train Loss: 0.0096, Val Loss: 0.0129, Val Cosine: 0.9901 | Pearson Correlation: 0.6421
+Epoch: 120, Train Loss: 0.0092, Val Loss: 0.0116, Val Cosine: 0.9912 | Pearson Correlation: 0.6485
+Epoch: 130, Train Loss: 0.0091, Val Loss: 0.0114, Val Cosine: 0.9914 | Pearson Correlation: 0.6603
+Epoch: 140, Train Loss: 0.0094, Val Loss: 0.0117, Val Cosine: 0.9911 | Pearson Correlation: 0.6503
+Epoch: 150, Train Loss: 0.0090, Val Loss: 0.0116, Val Cosine: 0.9912 | Pearson Correlation: 0.6506
+
+Finished training.
+
+Loading best model from: gatv2_advanced_best.pth
+
+--- Test Results ---
+  Avg. Test KLDivLoss: 0.0114
+  Avg. Test Cosine Similarity: 0.9913
+  Avg. Test Pearson Correlation: 0.6454
+--------------------
+
+--- Analyzing Single Node Prediction (Node index 2466 in batch) ---
+This node has 4 possible states.
+
+Comparison of Probabilities:
+         True Probability  Predicted Probability
+State                                           
+State 0            0.2449                 0.2495
+State 1            0.2972                 0.2498
+State 2            0.2248                 0.2500
+State 3            0.2331                 0.2508
+---------------------------------------------------
+
+
+Process finished with exit code 0

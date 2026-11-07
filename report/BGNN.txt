@@ -1,0 +1,61 @@
+D:\Apps\Anaconda\envs\ReliablityProject\python.exe D:\University\Master\1403-2\IntSys\project\my_code\models\new_b_gnn.py 
+Using device: cpu
+
+Bayesian GNN Model Architecture:
+BayesianGNN(
+  (hid_layers): ModuleList(
+    (0-2): 3 x BayesianGNNLayer(
+      (linear): BayesianLinear()
+    )
+  )
+  (norms): ModuleList(
+    (0-2): 3 x LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+  )
+  (input_res_projection): Linear(in_features=4, out_features=64, bias=True)
+  (out_layer): BayesianGNNLayer(
+    (linear): BayesianLinear()
+  )
+)
+
+Starting Bayesian GNN Training...
+Epoch: 001 | Recon Loss: 0.1607 | Val Loss: 0.0600 | Val Cosine: 0.9528 | Pearson Correlation: 0.4502
+Epoch: 010 | Recon Loss: 0.0308 | Val Loss: 0.0300 | Val Cosine: 0.9786 | Pearson Correlation: 0.6099
+Epoch: 020 | Recon Loss: 0.0213 | Val Loss: 0.0208 | Val Cosine: 0.9857 | Pearson Correlation: 0.6433
+Epoch: 030 | Recon Loss: 0.0170 | Val Loss: 0.0263 | Val Cosine: 0.9809 | Pearson Correlation: 0.6324
+Epoch: 040 | Recon Loss: 0.0155 | Val Loss: 0.0155 | Val Cosine: 0.9880 | Pearson Correlation: 0.6394
+Epoch: 050 | Recon Loss: 0.0144 | Val Loss: 0.0143 | Val Cosine: 0.9892 | Pearson Correlation: 0.6711
+Epoch: 060 | Recon Loss: 0.0136 | Val Loss: 0.0140 | Val Cosine: 0.9892 | Pearson Correlation: 0.6582
+Epoch: 070 | Recon Loss: 0.0115 | Val Loss: 0.0115 | Val Cosine: 0.9911 | Pearson Correlation: 0.6720
+Epoch: 080 | Recon Loss: 0.0105 | Val Loss: 0.0107 | Val Cosine: 0.9917 | Pearson Correlation: 0.6717
+Epoch: 090 | Recon Loss: 0.0096 | Val Loss: 0.0102 | Val Cosine: 0.9920 | Pearson Correlation: 0.6648
+Epoch: 100 | Recon Loss: 0.0097 | Val Loss: 0.0099 | Val Cosine: 0.9923 | Pearson Correlation: 0.6480
+Epoch: 110 | Recon Loss: 0.0085 | Val Loss: 0.0086 | Val Cosine: 0.9932 | Pearson Correlation: 0.6522
+Epoch: 120 | Recon Loss: 0.0081 | Val Loss: 0.0100 | Val Cosine: 0.9921 | Pearson Correlation: 0.6846
+Epoch: 130 | Recon Loss: 0.0075 | Val Loss: 0.0081 | Val Cosine: 0.9939 | Pearson Correlation: 0.6812
+Epoch: 140 | Recon Loss: 0.0075 | Val Loss: 0.0075 | Val Cosine: 0.9942 | Pearson Correlation: 0.6948
+Epoch: 150 | Recon Loss: 0.0069 | Val Loss: 0.0070 | Val Cosine: 0.9946 | Pearson Correlation: 0.6935
+
+Finished training.
+
+Loading best model from: bayesian_gnn_best.pth
+
+--- Test Results (100 MC Samples) ---
+  Avg. KLDivLoss:        0.0068 ± 0.0000
+  Avg. Cosine Similarity:  0.9948 ± 0.0000
+---------------------------------------------
+
+--- Analyzing Single Node Prediction (Node index 3348 in batch) ---
+This node has 3 possible states. Running 100 MC samples.
+
+Comparison of Probabilities:
+         True Probability  ...  Prediction Uncertainty (Std Dev)
+State                      ...                                  
+State 0            0.3327  ...                            0.0015
+State 1            0.3399  ...                            0.0014
+State 2            0.3273  ...                            0.0010
+
+[3 rows x 3 columns]
+---------------------------------------------------
+
+
+Process finished with exit code 0
